@@ -121,3 +121,45 @@ void playlist::play()          //A function to play all songs
 	
 }
 
+					/*---------------------------------------------------------------------------------------------------------
+					-----------------------------------            DELETE SONG             ------------------------------------
+					----------------------------------------------------------------------------------------------------------*/
+
+void playlist::DeleteSong(const Song &s)     //A FUNCTION TO DELete the selected song
+{
+
+	int l = -1;   //in case if song is not present
+	int i;     //loop and index variable
+	for (i = 0; i < scounter; i++)      //loop to find the index of song
+	{ 
+
+		if (plist[i] == s)    //checking if song is the 
+		{
+		
+
+			l = 0;
+			break;
+		}
+		
+	}
+	if (l == -1)
+	{
+		cout << "Song not present" << endl;
+	}
+	else if (l == 0)
+	{
+		for (; i < scounter - 1; i++)               //use of song set function to set values to default
+		{
+			plist[i] = plist[i + 1];
+		}
+		scounter--;
+	}
+    
+	if ((scounter) < (capacity / 2)) //if songs in list are less then half of te capacity of the array
+	{
+		
+		halfsize();
+	}
+	index = scounter;
+}
+
