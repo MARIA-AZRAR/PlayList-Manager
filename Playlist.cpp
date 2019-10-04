@@ -60,3 +60,24 @@ void playlist::doublesize()
 
 }
 
+						/*---------------------------------------------------------------------------------------------------------
+						----------------------------------------       ADD SONG       ---------------------------------------------
+						----------------------------------------------------------------------------------------------------------*/
+
+void playlist::addsong(const Song &s)                   //Function to add song
+{
+	if (capacity == scounter)
+	{
+		
+		doublesize();           //Calling the double size function if there is no capacity in current array
+		plist[scounter] = s;    //storing in the next index
+		scounter++;             //incrementing the number of songs
+	}
+	else                          //if the size of the current array is enough then
+	{
+		plist[scounter] = s;         //assigning value to the song playlist
+		scounter++;                   //incrementing the number of songs
+	}
+	index = scounter;
+}
+
