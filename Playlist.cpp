@@ -95,4 +95,29 @@ void playlist::ShowAll() const                     //Function to show all songs
 	}
 	
 }
+					/*---------------------------------------------------------------------------------------------------------
+					--------------------------------------------     PLAY     -------------------------------------------------
+					----------------------------------------------------------------------------------------------------------*/
+
+
+void playlist::play()          //A function to play all songs
+{
+	char x;                    // variable to aska if user want to repeat the list
+	while (1)                  //this will become an infinite loop so it will play continously
+	{
+		cout << "IF you want to continue or terminate the loop press y/n" << endl;
+		cin >> x;
+		if(x=='y')       //check if we want to play song
+	
+			for (int i = 0; i < scounter; i++)
+			{
+				cout << "Playing Song : " << plist[i]<<endl;
+			}
+		else
+		{
+			break;
+		}
+	}
+	
+}
 
