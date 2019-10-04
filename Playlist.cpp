@@ -223,3 +223,7 @@ playlist operator-(playlist& l2, const Song& s2)  //subtraction
 }
 
 
+playlist::~playlist()
+{
+	delete[] plist;                 //Deleting playlist
+}
