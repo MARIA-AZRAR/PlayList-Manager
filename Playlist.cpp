@@ -210,3 +210,16 @@ playlist operator+(playlist& p1 ,const Song& s1)         //OPERATO overloading a
 	return l1;
 }
 
+					/*---------------------------------------------------------------------------------------------------------
+					---------------------------------           SUBTRACTION OPERATOR            -------------------------------
+					----------------------------------------------------------------------------------------------------------*/
+
+playlist operator-(playlist& l2, const Song& s2)  //subtraction
+{
+	playlist l;
+	l2.DeleteSong(s2);           //calling delete song function 
+	l = l2;
+	return l;
+}
+
+
