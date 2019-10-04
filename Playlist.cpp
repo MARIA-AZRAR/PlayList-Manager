@@ -80,4 +80,19 @@ void playlist::addsong(const Song &s)                   //Function to add song
 	}
 	index = scounter;
 }
+					/*---------------------------------------------------------------------------------------------------------
+					--------------------------------------------      SHOW ALL      --------------------------------------------
+					----------------------------------------------------------------------------------------------------------*/
+
+
+void playlist::ShowAll() const                     //Function to show all songs
+{
+	cout << endl << "SONG NAME , ARTIST NAME" << endl; //Artist name and song name
+	for (int i = 0; i < scounter; i++)          //loop to show all songs
+	{
+		cout << plist[i];
+		cout << endl;
+	}
+	
+}
 
