@@ -162,4 +162,39 @@ void playlist::DeleteSong(const Song &s)     //A FUNCTION TO DELete the selected
 	}
 	index = scounter;
 }
+					/*---------------------------------------------------------------------------------------------------------
+					-------------------------------------              HALF SIZE             ----------------------------------
+					----------------------------------------------------------------------------------------------------------*/
+
+
+void playlist::halfsize()
+{
+	if (capacity == 2)
+	{                             //if capacity is default then no change is made
+		return;
+	}
+	else
+	{
+		//.........STEP 1............
+
+		Song * p2 = new Song[capacity / 2];             //Creating a new array dynamically doubling the size of the current array 
+
+		//.........STEP 2.............
+
+		for (int i = 0; i < scounter; i++)         //Assigning Old array to a new array
+		{
+			p2[i] = plist[i];
+		}
+
+		//........STEP 3.............           
+
+		delete[] plist;                //freeing the old array by deleting it
+
+		//.........STEP 4...........
+
+		plist = p2;              //Setting plist to the new array
+
+		capacity = capacity / 2;        //doubling the variable as we are doubling the size of array we are doing it now cuz we had to copy the old into new and old's capacity is less thats why we double it later on
+	}
+}
 
