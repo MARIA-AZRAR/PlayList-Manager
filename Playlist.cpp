@@ -198,3 +198,15 @@ void playlist::halfsize()
 	}
 }
 
+					/*---------------------------------------------------------------------------------------------------------
+					---------------------------------              ADDITION OPERATOR            -------------------------------
+					----------------------------------------------------------------------------------------------------------*/
+
+playlist operator+(playlist& p1 ,const Song& s1)         //OPERATO overloading and friend function
+{
+	playlist l1;
+    p1.addsong(s1);                    //calling add song function
+	l1 = p1;
+	return l1;
+}
+
