@@ -12,7 +12,7 @@ int main()
 {
 	cout << "                   ----------------------------WELCOME TO PLAYLIST MANAGER----------------------------                    " << endl;
 	cout << "                                                        BY MARIA AZRAR                                                      " << endl;
-	int jk;     //variable for choosing input
+	int input;     //variable for choosing input
 	Song S;   //song object for input and del
 	playlist play1;
 	while (1)
@@ -26,8 +26,8 @@ int main()
 		cout << "5     Show All" << endl;
 		cout << "6     Exit Program" << endl;
 
-		cin >> jk;
-		switch (jk)
+		cin >> input;
+		switch (input)
 		{
 		case 1:
 		{
@@ -37,7 +37,7 @@ int main()
 		}
 		case 2:
 		{
-			cout << "Enter the song to Add in format [song name , artist name]" << endl;
+			cout << "Enter the song to Add in the format [song name , artist name]" << endl;
 			cin >> S;
 			play1.addsong(S);
 			break;
